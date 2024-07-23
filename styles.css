@@ -1,1 +1,84 @@
-/*  your css code here. If applicable */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.progress {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 5%;
+    transform: translateY(-50%);
+    height: 4px;
+    background-color: #d3d3d3; /* Grey color for the background line */
+    z-index: -1;
+}
+
+.progress-active {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    height: 4px;
+    background-color: #3498db;
+    z-index: 0;
+    transition: width 0.3s ease;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #d3d3d3; /* Grey border color for the inactive circles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+.circle.active {
+    background-color: #3498db;
+    color: #fff;
+    border-color: #3498db; /* Blue border color for the active circles */
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:disabled {
+    background-color: #b3c0d1;
+    cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #2980b9;
+}
